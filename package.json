@@ -15,7 +15,7 @@
     "browser": "gulp browser"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.10",
+    "cheerio": "^0.20.0",
     "foundation-emails": "^2.4.0",
     "mkdirp": "^1.0.4",
     "object-values": "^3.0.0",
