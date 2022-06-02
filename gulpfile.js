@@ -1,19 +1,19 @@
-var browserify = require('browserify');
-var gulp = require('gulp');
-var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
-var uglify = require('gulp-uglify');
+var browserify = require("browserify");
+var gulp = require("gulp");
+var source = require("vinyl-source-stream");
+var buffer = require("vinyl-buffer");
+var uglify = require("gulp-uglify-es").default;
 
-gulp.task('browser', function() {
+gulp.task("browser", function () {
   var b = browserify({
-    entries: 'bin/inky-browser.js',
-    debug: false
+    entries: "bin/inky-browser.js",
+    debug: false,
   });
 
-  return b.bundle()
-    .pipe(source('inky-browser.js'))
+  return b
+    .bundle()
+    .pipe(source("inky-browser.js"))
     .pipe(buffer())
     .pipe(uglify())
-    .pipe(gulp.dest('./dist/'));
+    .pipe(gulp.dest("./dist/"));
 });
-
