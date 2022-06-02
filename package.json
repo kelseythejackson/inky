@@ -16,10 +16,10 @@
   },
   "dependencies": {
     "cheerio": "^0.20.0",
-    "foundation-emails": "^2.2.0",
-    "mkdirp": "^0.5.1",
-    "object-values": "^1.0.0",
-    "through2": "^2.0.0",
+    "foundation-emails": "^2.4.0",
+    "mkdirp": "^1.0.4",
+    "object-values": "^3.0.0",
+    "through2": "^4.0.2",
     "vinyl-fs": "^3.0.3"
   },
   "devDependencies": {
