@@ -6,7 +6,7 @@ describe("PricingTable", () => {
         <price-table title="Something" total="$80"></price-table>
       `;
     var expected = `
-        <table role="table">
+        <table class="pricing-table" role="table">
           <tr>
             <td>
               <h5>Something</h5>
@@ -17,6 +17,27 @@ describe("PricingTable", () => {
           </tr>
         </table>
       `;
+    compare(input, expected);
+  });
+
+  it("applies a table with a header and body", () => {
+    var input = `
+      <price-table>
+        <price-heading><td>1</td></price-heading>
+        <price-body><td>2</td></price-body>
+      </price-table>
+    `;
+
+    var expected = `
+      <table class="pricing-table" role="table">
+        <tr>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>2</td>
+        </tr>
+      </table>
+    `;
     compare(input, expected);
   });
 });
