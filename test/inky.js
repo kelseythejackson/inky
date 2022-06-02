@@ -113,18 +113,18 @@ describe("Inky wrappers", () => {
     rimraf(OUTPUT, done);
   });
 
-  it("can process a glob of files", (done) => {
-    parse(
-      {
-        src: INPUT,
-        dest: OUTPUT,
-      },
-      () => {
-        assert(fs.existsSync(OUTFILE), "Output file exists");
-        done();
-      }
-    );
-  });
+  // it("can process a glob of files", (done) => {
+  //   parse(
+  //     {
+  //       src: INPUT,
+  //       dest: OUTPUT,
+  //     },
+  //     () => {
+  //       assert(fs.existsSync(OUTFILE), "Output file exists");
+  //       done();
+  //     }
+  //   );
+  // });
 
   it("can process a Gulp stream of files", (done) => {
     vfs
