@@ -24,6 +24,7 @@ describe("FAButton", () => {
     >
       Browse the Pro Icons
     </center></v:roundrect></div><![endif]-->
+     <!--[if !mso]><!-- -->
     <table class="button success radius" role="presentation">
                 <tbody>
                     <tr>
@@ -42,6 +43,7 @@ describe("FAButton", () => {
                     </tr>
                 </tbody>
             </table>
+            <!--<![endif]-->
         `;
     compare(input, expected);
   });
@@ -69,6 +71,7 @@ describe("FAButton", () => {
     >
       Browse the Pro Icons
     </center></v:roundrect></div><![endif]-->
+    <!--[if !mso]><!-- -->
     <table class="button alert radius" role="presentation">
                 <tbody>
                     <tr>
@@ -87,6 +90,7 @@ describe("FAButton", () => {
                     </tr>
                 </tbody>
             </table>
+            <!--<![endif]-->
         `;
     compare(input, expected);
   });
