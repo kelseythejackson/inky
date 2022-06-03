@@ -1,7 +1,7 @@
-var compare = require('./lib/compare');
+var compare = require("./lib/compare");
 
-describe('Center', () => {
-  it('applies a text-center class and center alignment attribute to the first child', () => {
+describe("Center", () => {
+  it("applies a text-center class and center alignment attribute to the first child", () => {
     var input = `
       <center>
         <div></div>
@@ -34,7 +34,7 @@ describe('Center', () => {
     compare(input, expected);
   });
 
-  it('applies the class float-center to <item> elements', () => {
+  it("applies the class float-center to <item> elements", () => {
     var input = `
       <center>
         <menu>
@@ -67,8 +67,8 @@ describe('Center', () => {
   });
 });
 
-describe('Button', () => {
-  it('creates a simple button', () => {
+describe("Button", () => {
+  it("creates a simple button", () => {
     var input = '<button href="http://zurb.com">Button</button>';
     var expected = `
       <table class="button" role="presentation">
@@ -92,13 +92,14 @@ describe('Button', () => {
   });
 
   it('creates a button with target="_blank" attribute', () => {
-    var input = '<button href="http://zurb.com" target="_blank">Button</button>';
+    var input =
+      '<button href="http://zurb.com" target="_blank">Button</button>';
     var expected = `
       <table class="button" role="presentation">
         <tbody>
           <tr>
             <td>
-              <table>
+              <table role="presentation">
                 <tbody>
                   <tr>
                     <td><a href="http://zurb.com" target="_blank">Button</a></td>
@@ -114,7 +115,7 @@ describe('Button', () => {
     compare(input, expected);
   });
 
-  it('creates a button with classes', () => {
+  it("creates a button with classes", () => {
     var input = `
       <button class="small alert" href="http://zurb.com">Button</button>
     `;
@@ -139,7 +140,7 @@ describe('Button', () => {
     compare(input, expected);
   });
 
-  it('creates a correct expanded button', () => {
+  it("creates a correct expanded button", () => {
     var input = `
       <button class="expand" href="http://zurb.com">Button</button>
     `;
@@ -148,8 +149,8 @@ describe('Button', () => {
         <tbody>
           <tr>
             <td>
-              <table>
-                <tbody role="presentation">
+              <table role="presentation">
+                <tbody>
                   <tr>
                     <td>
                       <center><a href="http://zurb.com" align="center" class="float-center">Button</a></center>
@@ -168,8 +169,8 @@ describe('Button', () => {
   });
 });
 
-describe('Menu', () => {
-  it('creates a menu with item tags inside', () => {
+describe("Menu", () => {
+  it("creates a menu with item tags inside", () => {
     var input = `
       <menu>
         <item href="http://zurb.com">Item</item>
@@ -223,7 +224,7 @@ describe('Menu', () => {
     compare(input, expected);
   });
 
-  it('creates a menu with classes', () => {
+  it("creates a menu with classes", () => {
     var input = `
       <menu class="vertical">
       </menu>
@@ -248,7 +249,7 @@ describe('Menu', () => {
     compare(input, expected);
   });
 
-  it('works without using an item tag', () => {
+  it("works without using an item tag", () => {
     var input = `
       <menu>
         <th class="menu-item"><a href="http://zurb.com">Item 1</a></th>
@@ -276,9 +277,9 @@ describe('Menu', () => {
   });
 });
 
-describe('Callout', () => {
-  it('creates a callout with correct syntax', () => {
-    var input = '<callout>Callout</callout>';
+describe("Callout", () => {
+  it("creates a callout with correct syntax", () => {
+    var input = "<callout>Callout</callout>";
     var expected = `
       <table class="callout" role="presentation">
         <tbody>
@@ -293,7 +294,7 @@ describe('Callout', () => {
     compare(input, expected);
   });
 
-  it('copies classes to the final HTML', () => {
+  it("copies classes to the final HTML", () => {
     var input = '<callout class="primary">Callout</callout>';
     var expected = `
       <table class="callout" role="presentation">
@@ -310,8 +311,8 @@ describe('Callout', () => {
   });
 });
 
-describe('Spacer', () => {
-  it('creates a spacer element with correct size', () => {
+describe("Spacer", () => {
+  it("creates a spacer element with correct size", () => {
     var input = '<spacer size="10"></spacer>';
     var expected = `
       <table class="spacer" role="presentation">
@@ -326,9 +327,8 @@ describe('Spacer', () => {
     compare(input, expected);
   });
 
-
-  it('creates a spacer with a default size or no size defined', () => {
-    var input = '<spacer></spacer>';
+  it("creates a spacer with a default size or no size defined", () => {
+    var input = "<spacer></spacer>";
     var expected = `
       <table class="spacer" role="presentation">
         <tbody>
@@ -342,7 +342,7 @@ describe('Spacer', () => {
     compare(input, expected);
   });
 
-  it('creates a spacer element for small screens with correct size', () => {
+  it("creates a spacer element for small screens with correct size", () => {
     var input = '<spacer size-sm="10"></spacer>';
     var expected = `
       <table class="spacer hide-for-large" role="presentation">
@@ -357,7 +357,7 @@ describe('Spacer', () => {
     compare(input, expected);
   });
 
-  it('creates a spacer element for large screens with correct size', () => {
+  it("creates a spacer element for large screens with correct size", () => {
     var input = '<spacer size-lg="20"></spacer>';
     var expected = `
       <table class="spacer show-for-large" role="presentation">
@@ -372,7 +372,7 @@ describe('Spacer', () => {
     compare(input, expected);
   });
 
-  it('creates a spacer element for small and large screens with correct sizes', () => {
+  it("creates a spacer element for small and large screens with correct sizes", () => {
     var input = '<spacer size-sm="10" size-lg="20"></spacer>';
     var expected = `
       <table class="spacer hide-for-large" role="presentation">
@@ -394,7 +394,7 @@ describe('Spacer', () => {
     compare(input, expected);
   });
 
-  it('copies classes to the final spacer HTML', () => {
+  it("copies classes to the final spacer HTML", () => {
     var input = '<spacer size="10" class="bgcolor"></spacer>';
     var expected = `
       <table class="spacer bgcolor" role="presentation">
@@ -410,8 +410,8 @@ describe('Spacer', () => {
   });
 });
 
-describe('wrapper', () => {
-  it('creates a wrapper that you can attach classes to', () => {
+describe("wrapper", () => {
+  it("creates a wrapper that you can attach classes to", () => {
     var input = `<wrapper class="header"></wrapper>`;
     var expected = `
       <table class="wrapper header" align="center" role="presentation">
@@ -427,8 +427,8 @@ describe('wrapper', () => {
   });
 });
 
-describe('h-line', () => {
-  it('creates a horizontal rule that you can attach classes to', () => {
+describe("h-line", () => {
+  it("creates a horizontal rule that you can attach classes to", () => {
     var input = `<h-line class="dotted">`;
     var expected = `
       <table class="h-line dotted" role="presentation">
@@ -437,12 +437,12 @@ describe('h-line', () => {
         </tr>
       </table>
     `;
-     compare(input, expected);
+    compare(input, expected);
   });
 });
 
-describe('raw', () => {
-  it('creates a wrapper that ignores anything inside', () => {
+describe("raw", () => {
+  it("creates a wrapper that ignores anything inside", () => {
     var input = `<raw><<LCG Program\TG LCG Coupon Code Default='246996'>></raw>`;
     var expected = `<<LCG Program\TG LCG Coupon Code Default='246996'>>`;
 
